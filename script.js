@@ -149,3 +149,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animate();
 });
+/* ================= SCROLL REVEAL ================= */
+
+/* ================= ADVANCED SCROLL REVEAL ================= */
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      // Если это контейнер карточек
+      if (entry.target.classList.contains("cards")) {
+
+        const cards = entry.target.querySelectorAll(".card");
+
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("visible");
+          }, index * 150); // задержка между карточками
+        });
+
+      } else {
+        entry.target.classList.add("visible");
+      }
+
+    }
+
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".section, .rule-box")
+  .forEach(el => observer.observe(el));
+
+document.querySelectorAll(".cards")
+  .forEach(el => observer.observe(el));
+  /* ================= PARALLAX ================= */
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const hero = document.querySelector(".hero");
+
+  if (hero) {
+    hero.style.transform = `translateY(${scrollY * 0.3}px)`;
+  }
+});

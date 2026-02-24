@@ -6,20 +6,22 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #0f0f0f;
+  background: radial-gradient(circle at center, #111 0%, #0a0a0a 60%, #000 100%);
   color: #fff;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(17,17,17,0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 1000;
-  padding: 20px 0;
+  padding: 18px 0;
 }
 
 .container {
@@ -34,20 +36,31 @@ body {
   align-items: center;
 }
 
+.logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
   color: #fff;
-  font-weight: 600;
 }
 
 .btn-nav {
-  background: #e10600;
-  padding: 8px 15px;
-  border-radius: 6px;
+  background: linear-gradient(45deg, #e10600, #ff2d2d);
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: #fff;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
   height: 100vh;
@@ -56,19 +69,14 @@ nav a {
   justify-content: center;
   text-align: center;
   margin-top: 90px;
-  background: radial-gradient(circle at center, rgba(225,6,0,0.15), transparent 60%),
-              linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-}
-
-.hero-content {
   position: relative;
-  z-index: 2;
 }
 
 .hero-title {
-  font-size: 70px;
+  font-size: 80px;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
 }
 
 .white {
@@ -77,110 +85,134 @@ nav a {
 
 .red {
   color: #e10600;
-  text-shadow: 0 0 15px rgba(225, 6, 0, 0.7);
+  text-shadow: 0 0 20px rgba(225, 6, 0, 0.8),
+               0 0 40px rgba(225, 6, 0, 0.4);
 }
 
 .hero-subtitle {
-  margin: 20px 0;
-  opacity: 0.8;
+  opacity: 0.7;
+  font-size: 18px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
+/* ================= BUTTONS ================= */
+
 .btn {
-  padding: 12px 25px;
-  border: 2px solid #e10600;
-  border-radius: 6px;
-  color: #fff;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: white;
   text-decoration: none;
-  margin: 5px;
-  display: inline-block;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .btn.primary {
-  background: #e10600;
+  background: linear-gradient(45deg, #e10600, #ff2d2d);
+  border: none;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 .section {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .dark {
-  background: #151515;
+  background: #0f0f0f;
 }
+
+.section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+/* ================= CARDS ================= */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 40px;
 }
 
 .card {
-  background: #1c1c1c;
-  padding: 30px;
-  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover {
   transform: translateY(-10px);
+  border-color: rgba(225,6,0,0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
 .highlight {
-  border: 2px solid #e10600;
+  border: 1px solid rgba(225,6,0,0.6);
+  box-shadow: 0 0 40px rgba(225,6,0,0.2);
 }
 
-.rules {
-  display: grid;
-  gap: 20px;
-  margin-top: 40px;
-}
+/* ================= RULES ================= */
 
 .rule-box {
-  background: #1c1c1c;
-  padding: 20px;
+  background: rgba(255,255,255,0.04);
+  padding: 25px;
   border-left: 4px solid #e10600;
-  border-radius: 6px;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
+
+/* ================= FORM ================= */
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 20px;
+  max-width: 500px;
+  margin: auto;
 }
 
 input, select, textarea {
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  background: #1c1c1c;
-  color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  outline: none;
 }
 
-textarea {
-  resize: none;
-  height: 100px;
+input:focus, textarea:focus, select:focus {
+  border-color: #e10600;
+  box-shadow: 0 0 10px rgba(225,6,0,0.3);
 }
 
 .full {
   width: 100%;
 }
 
+/* ================= FOOTER ================= */
+
 .footer {
-  background: #111;
+  background: #080808;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
+  font-size: 14px;
+  opacity: 0.6;
 }
 
-/* CANVAS */
+/* ================= CANVAS ================= */
 
 #smokeCanvas {
   position: fixed;
@@ -189,5 +221,42 @@ textarea {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 0;
+}
+/* ================= SCROLL ANIMATION ================= */
+
+/* ================= ADVANCED SCROLL ANIMATION ================= */
+
+/* ================= ULTRA SMOOTH SCROLL ANIMATION ================= */
+
+.section,
+.card,
+.rule-box {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  filter: blur(12px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+}
+
+.section.visible,
+.card.visible,
+.rule-box.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+/* ================= EDGE RED GLOW ================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at left center, rgba(225,6,0,0.15), transparent 40%),
+    radial-gradient(circle at right center, rgba(225,6,0,0.15), transparent 40%);
   z-index: 0;
 }
