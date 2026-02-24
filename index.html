@@ -9,32 +9,31 @@
 </head>
 <body>
 
+<canvas id="smokeCanvas"></canvas>
+
 <header class="header">
   <div class="container nav">
-<div class="logo">
-  <svg class="hawk-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 34c8-6 18-10 30-10s22 4 30 10c-6-2-12-3-18-2-6 1-10 3-12 6-2-3-6-5-12-6-6-1-12 0-18 2z"
-          fill="#e10600"/>
-    <path d="M32 8c4 6 6 12 6 18-2-2-4-3-6-3s-4 1-6 3c0-6 2-12 6-18z"
-          fill="#ffffff"/>
-  </svg>
+    <div class="logo">
+      <svg class="hawk-icon" viewBox="0 0 64 64">
+        <path d="M2 34c8-6 18-10 30-10s22 4 30 10c-6-2-12-3-18-2-6 1-10 3-12 6-2-3-6-5-12-6-6-1-12 0-18 2z" fill="#e10600"/>
+        <path d="M32 8c4 6 6 12 6 18-2-2-4-3-6-3s-4 1-6 3c0-6 2-12 6-18z" fill="#ffffff"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-main">ЯСТРЕБЫ</span>
+        <span class="logo-red">CLASH</span>
+      </span>
+    </div>
 
-  <span class="logo-text">
-    <span class="logo-main">ЯСТРЕБЫ</span>
-    <span class="logo-red">CLASH</span>
-  </span>
-</div>
     <nav>
       <a href="#">Главная</a>
       <a href="#clans">Кланы</a>
-      <a href="#">Правила</a>
-      <a href="#" class="btn-nav">Вступить</a>
+      <a href="#rules">Правила</a>
+      <a href="#form" class="btn-nav">Вступить</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<section class="section hero">
   <div class="container hero-content">
     <h1 class="hero-title">
       <span class="white">NEW</span>
@@ -43,33 +42,20 @@
       <span class="red">CLASH</span>
     </h1>
 
-  
-
     <div class="hero-buttons">
-      <a href="#" class="btn">Telegram</a>
-      <a href="#" class="btn primary">Вступить</a>
+  <a href="https://t.me/hawks_coc" target="_blank" class="btn">Telegram</a>
+      <a href="#form" class="btn primary">Вступить</a>
     </div>
   </div>
 </section>
-
-<!-- ДАЛЬШЕ ВСЁ КАК БЫЛО -->
 
 <section class="section dark">
   <div class="container">
     <h2>Зал Славы</h2>
     <div class="cards">
-      <div class="card">
-        <h3>TOP 200</h3>
-        <p>Лидеры рейтинга</p>
-      </div>
-      <div class="card">
-        <h3>TOP 5</h3>
-        <p>Лучшие игроки</p>
-      </div>
-      <div class="card">
-        <h3>№1</h3>
-        <p>Лучший клан</p>
-      </div>
+      <div class="card"><h3>TOP 200</h3><p>Лидеры рейтинга</p></div>
+      <div class="card"><h3>TOP 5</h3><p>Лучшие игроки</p></div>
+      <div class="card"><h3>№1</h3><p>Лучший клан</p></div>
     </div>
   </div>
 </section>
@@ -78,49 +64,28 @@
   <div class="container">
     <h2>Наши Кланы</h2>
     <div class="cards">
-      <div class="card highlight">
-        <h3>ЯСТРЕБЫ</h3>
-        <p>Основной состав</p>
-        <button class="btn primary">Вступить</button>
-      </div>
-      <div class="card">
-        <h3>ЯСТРЕБЫ Academy</h3>
-        <p>Подготовка бойцов</p>
-        <button class="btn">Подробнее</button>
-      </div>
-      <div class="card">
-        <h3>ЯСТРЕБЫ Mini</h3>
-        <p>Для начинающих</p>
-        <button class="btn">Подробнее</button>
-      </div>
+      <div class="card highlight"><h3>ЯСТРЕБЫ</h3><p>Основной состав</p></div>
+      <div class="card"><h3>ЯСТРЕБЫ Academy</h3><p>Подготовка бойцов</p></div>
+      <div class="card"><h3>ЯСТРЕБЫ Mini</h3><p>Для начинающих</p></div>
     </div>
   </div>
 </section>
 
-<section class="section dark">
+<section class="section dark" id="rules">
   <div class="container">
     <h2>Правила Клана</h2>
-    <div class="rules">
-      <div class="rule-box">
-        <h4>1. 18+</h4>
-        <p>Только взрослые игроки</p>
-      </div>
-      <div class="rule-box">
-        <h4>2. Рейды</h4>
-        <p>Обязательное участие</p>
-      </div>
-      <div class="rule-box">
-        <h4>3. Активность</h4>
-        <p>Не пропадать надолго</p>
-      </div>
+    <div class="cards">
+      <div class="card"><h3>18+</h3><p>Только взрослые игроки</p></div>
+      <div class="card"><h3>Рейды</h3><p>Обязательное участие</p></div>
+      <div class="card"><h3>Активность</h3><p>Не пропадать надолго</p></div>
     </div>
   </div>
 </section>
 
-<section class="section form-section">
+<section class="section form-section" id="form">
   <div class="container">
-    <h2>Подать заявку в ЯСТРЕБЫ CLASH</h2>
-    <form id="applicationForm">
+    <h2>Подать заявку</h2>
+    <form>
       <input type="text" placeholder="Ваш ник" required />
       <input type="text" placeholder="Тег игрока" required />
       <select required>
@@ -138,16 +103,9 @@
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <p>© 2026 ЯСТРЕБЫ CLASH</p>
-  </div>
+  <p>© 2026 ЯСТРЕБЫ CLASH</p>
 </footer>
 
 <script src="script.js"></script>
-<audio id="boomSound" preload="auto">
-  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
-</audio>
-
-<canvas id="smokeCanvas"></canvas>
 </body>
 </html>
