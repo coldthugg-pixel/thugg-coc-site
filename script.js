@@ -193,3 +193,18 @@ window.addEventListener("scroll", () => {
     hero.style.transform = `translateY(${scrollY * 0.3}px)`;
   }
 });
+/* ================= FADE BETWEEN SECTIONS ================= */
+
+const sections = document.querySelectorAll(".section");
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+    } else {
+      entry.target.style.opacity = "0.6";
+    }
+  });
+}, { threshold: 0.6 });
+
+sections.forEach(section => fadeObserver.observe(section));
