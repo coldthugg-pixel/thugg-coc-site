@@ -252,8 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let isSnapping = false;
   let scrollTimeout;
 
-  if (window.innerWidth <= 1024) return;
-  
   window.addEventListener("scroll", () => {
 
     if (isSnapping) return;

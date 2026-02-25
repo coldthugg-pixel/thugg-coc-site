@@ -71,10 +71,58 @@ backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+/* ================= ULTRA COMPACT NAV ================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;              /* ещё меньше расстояние */
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* Обычные ссылки */
+nav a {
+  font-size: 11px;        /* уменьшаем текст */
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+/* Кнопка */
+.btn-nav {
+  font-size: 11px;
+  padding: 4px 10px;      /* компактная кнопка */
+  border-radius: 16px;
+  background: #e10600;
+  color: #fff;
+}
+
+nav a {
+  font-size: 14px;        /* немного уменьшаем */
+  white-space: nowrap;    /* текст не ломается */
+}
+/* убираем старый margin */
+nav a {
+  margin-left: 0;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  height: 40px; /* одинаковая высота */
+}
+
+/* кнопка вступить */
+.btn-nav {
+  background: #e10600;
+  padding: 10px 22px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 nav a {
@@ -82,6 +130,9 @@ nav a {
   text-decoration:none;
   color:#ccc;
   transition:0.3s;
+}
+nav a {
+  line-height: 1;
 }
 
 nav a:hover { color:#fff; }
@@ -490,110 +541,61 @@ input, select, textarea {
 }
 /* ================= MOBILE OPTIMIZATION ================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
 
-  /* Убираем жёсткий fullscreen */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Убираем 100vh */
   .section {
     height: auto;
     min-height: 100vh;
-    padding: 120px 20px 80px 20px;
+    padding: 100px 20px 80px;
   }
 
-  /* Заголовки */
+  /* HERO */
   .hero-title {
-    font-size: 52px;
+    font-size: 42px;
     line-height: 1.1;
   }
 
-  .hall-title {
-    font-size: 26px;
-    margin-bottom: 40px;
-  }
-
-  h2 {
-    font-size: 28px;
-  }
-
-  /* Кнопки */
   .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center;
   }
 
   .btn {
     width: 100%;
-    max-width: 280px;
     text-align: center;
   }
 
-  /* Навигация */
-  nav a {
-    margin-left: 15px;
-    font-size: 14px;
-  }
-
-  .header {
-    padding: 12px 0;
-  }
-
-  /* Карточки */
+  /* Cards */
   .cards {
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
 
-  .card {
-    padding: 20px;
+  /* Hall section */
+  .hall-title {
+    font-size: 24px;
+    margin-bottom: 30px;
   }
 
-  /* Hall cards */
   .hall-card {
     min-width: 200px;
     padding: 20px;
     font-size: 16px;
   }
 
-  /* Уменьшаем blur края */
-  .hall-section::before,
-  .hall-section::after {
-    width: 80px;
-  }
-
-  /* Форма */
-  form {
-    width: 100%;
-  }
-
-  input, select, textarea {
-    font-size: 16px;
-  }
-
-  textarea {
-    min-height: 120px;
-  }
-
-  /* Убираем zoom эффект */
-  .section-active {
+  /* Отключаем hover-эффекты */
+  .card:hover,
+  .hall-card:hover {
     transform: none;
+    box-shadow: none;
   }
 
 }
-
-/* ===== VERY SMALL PHONES ===== */
-
-@media (max-width: 480px) {
-
-  .hero-title {
-    font-size: 38px;
-  }
-
-  nav {
-    display: none; /* на маленьких экранах просто скрываем меню */
-  }
-
-  .hall-card {
-    min-width: 170px;
-  }
-
+.logo {
+  max-width: 40%;
 }
