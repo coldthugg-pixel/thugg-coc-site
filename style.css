@@ -488,3 +488,112 @@ input, select, textarea {
   transform: scale(1.02);
   z-index: 5;
 }
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media (max-width: 1024px) {
+
+  /* Убираем жёсткий fullscreen */
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 20px 80px 20px;
+  }
+
+  /* Заголовки */
+  .hero-title {
+    font-size: 52px;
+    line-height: 1.1;
+  }
+
+  .hall-title {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  /* Кнопки */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Навигация */
+  nav a {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  .header {
+    padding: 12px 0;
+  }
+
+  /* Карточки */
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  /* Hall cards */
+  .hall-card {
+    min-width: 200px;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  /* Уменьшаем blur края */
+  .hall-section::before,
+  .hall-section::after {
+    width: 80px;
+  }
+
+  /* Форма */
+  form {
+    width: 100%;
+  }
+
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  /* Убираем zoom эффект */
+  .section-active {
+    transform: none;
+  }
+
+}
+
+/* ===== VERY SMALL PHONES ===== */
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  nav {
+    display: none; /* на маленьких экранах просто скрываем меню */
+  }
+
+  .hall-card {
+    min-width: 170px;
+  }
+
+}
