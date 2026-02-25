@@ -21,33 +21,30 @@ body {
   background:#0a0a0a;
   color:#fff;
   overflow-y:scroll;
-  scroll-snap-type:y mandatory;
 }
 
 /* ================= SNAP SECTIONS ================= */
 
-.section {
+.section{
   height:100vh;
-  scroll-snap-align:start;
   display:flex;
-  justify-content:center;
   align-items:center;
-  padding:120px 40px;
+  justify-content:center;
   text-align:center;
+  padding:120px 40px;
   position:relative;
 
-  opacity:0.3;
-  filter:blur(8px);
-  transform:scale(0.97);
+  opacity:0;
+  filter:blur(20px);
+  transform:scale(1.02);
 
   transition:
-    opacity 0.8s cubic-bezier(0.22,1,0.36,1),
-    filter 0.8s cubic-bezier(0.22,1,0.36,1),
-    transform 0.8s cubic-bezier(0.22,1,0.36,1);
+    opacity 1.2s cubic-bezier(.22,1,.36,1),
+    filter 1.2s cubic-bezier(.22,1,.36,1),
+    transform 1.2s cubic-bezier(.22,1,.36,1);
 }
 
-/* Активная секция */
-.section.active {
+.section.active{
   opacity:1;
   filter:blur(0px);
   transform:scale(1);
@@ -267,4 +264,227 @@ input, select, textarea {
       rgba(225, 6, 0, 0.35),
       transparent 70%
     );
+}
+/* ===== HERO TEXT ANIMATION ===== */
+
+.hero-title span {
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  display: inline-block;
+}
+
+/* первая часть */
+.hero-title span:first-child {
+  animation: heroReveal 2s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay: 0.4s;
+}
+
+/* слово РУССКИ */
+.hero-title span:last-child {
+  animation: heroReveal 2s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* ================= SECTION DIVIDER ================= */
+
+.section {
+  position: relative;
+}
+
+/* Линия-разделитель между секциями */
+.section:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(225, 6, 0, 0.4),
+    transparent
+  );
+
+  opacity: 0.6;
+}
+
+/* Более мягкий вариант для темных секций */
+.dark:not(:last-child)::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}
+/* ================= APPLE CROSSFADE ================= */
+
+/* Боковой cinematic fade */
+
+.hall-section::before,
+.hall-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hall-section::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(11,11,11,1) 0%, rgba(11,11,11,0.8) 40%, transparent 100%);
+}
+
+.hall-section::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(11,11,11,1) 0%, rgba(11,11,11,0.8) 40%, transparent 100%);
+}
+/* ================= HALL OF FAME CAROUSEL ================= */
+
+.hall-section {
+  position: relative;
+}
+
+.hall-title {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.hall-container {
+  width: 100%;
+  position: relative;
+}
+
+/* РЯД */
+
+.hall-row {
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 20px 0;
+}
+.hall-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  padding: 10px 0;
+}
+
+/* КАРТОЧКА */
+
+.hall-card {
+  min-width: 260px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+
+  transition: 0.3s;
+}
+
+.hall-card span {
+  display: block;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+.hall-card:hover {
+  transform: scale(1.06);
+  z-index: 20;
+}
+
+/* АНИМАЦИЯ */
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.hall-row-left .hall-track {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.hall-row-right .hall-track {
+  animation: scrollRight 40s linear infinite;
+}
+
+/* BLUR ПО БОКАМ */
+
+.hall-section::before,
+.hall-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hall-section::before {
+  left: 0;
+  background: linear-gradient(to right, #0b0b0b 0%, transparent 100%);
+}
+
+.hall-section::after {
+  right: 0;
+  background: linear-gradient(to left, #0b0b0b 0%, transparent 100%);
+}
+/* ================= HALL CARD HOVER SCALE ================= */
+
+.hall-card {
+  position: relative;
+  transition: 
+    transform 0.35s cubic-bezier(.22,1,.36,1),
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+  will-change: transform;
+}
+
+.hall-card:hover {
+  transform: scale(1.08);
+  z-index: 10;
+
+  background: rgba(225,6,0,0.18);
+
+}
+.hall-track:hover .hall-card {
+  opacity: 0.5;
+}
+
+.hall-track .hall-card:hover {
+  opacity: 1;
+}
+/* ================= ACTIVE SECTION ZOOM ================= */
+
+.section {
+  transition: 
+    transform 0.8s cubic-bezier(.22,1,.36,1),
+}
+
+.section-active {
+  transform: scale(1.02);
+  z-index: 5;
 }

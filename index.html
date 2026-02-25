@@ -35,12 +35,10 @@
 
 <section class="section hero">
   <div class="container hero-content">
-    <h1 class="hero-title">
-      <span class="white">NEW</span>
-      <span class="red">ERA</span>
-      <span class="white">OR</span>
-      <span class="red">CLASH</span>
-    </h1>
+  <h1 class="hero-title">
+  <span class="white">ИГРАЙ ПО</span>
+  <span class="red">РУССКИ</span>
+</h1>
 
     <div class="hero-buttons">
   <a href="https://t.me/hawks_coc" target="_blank" class="btn">Telegram</a>
@@ -49,14 +47,32 @@
   </div>
 </section>
 
-<section class="section dark">
-  <div class="container">
-    <h2>Зал Славы</h2>
-    <div class="cards">
-      <div class="card"><h3>TOP 200</h3><p>Лидеры рейтинга</p></div>
-      <div class="card"><h3>TOP 5</h3><p>Лучшие игроки</p></div>
-      <div class="card"><h3>№1</h3><p>Лучший клан</p></div>
+<section class="section dark hall-section">
+  <div class="hall-container">
+
+    <h2 class="hall-title">Зал Славы</h2>
+
+    <!-- ВЕРХНИЙ РЯД -->
+    <div class="hall-row hall-row-left">
+      <div class="hall-track">
+      
+
+        <!-- ДУБЛЬ -->
+        <div class="hall-card">TOP 200<br><span>Лидеры рейтинга</span></div>
+        <div class="hall-card">TOP 5<br><span>Лучшие игроки</span></div>
+        <div class="hall-card">№1<br><span>Лучший клан</span></div>
+      </div>
     </div>
+
+    <!-- НИЖНИЙ РЯД -->
+    <div class="hall-row hall-row-right">
+      <div class="hall-track">
+        <div class="hall-card">Активность<br><span>Лучшие по онлайну</span></div>
+        <div class="hall-card">Донат<br><span>Поддержка клана</span></div>
+        <div class="hall-card">Серия побед<br><span>Максимальный винстрик</span></div>
+
+
+
   </div>
 </section>
 
@@ -86,16 +102,27 @@
   <div class="container">
     <h2>Подать заявку</h2>
     <form>
-      <input type="text" placeholder="Ваш ник" required />
+   <input type="text" placeholder="Ваш Telegram (@username)" required />
       <input type="text" placeholder="Тег игрока" required />
+     <select required>
+  <option value="">Уровень Ратуши</option>
+  <option>TH9</option>
+  <option>TH10</option>
+  <option>TH11</option>
+  <option>TH12</option>
+  <option>TH13</option>
+  <option>TH14</option>
+  <option>TH15</option>
+  <option>TH16</option>
+  <option>TH17</option>
+  <option>TH18</option>
+</select>
       <select required>
-        <option value="">Уровень Ратуши</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-      </select>
+  <option value="">Выберите клан</option>
+  <option>ЯСТРЕБЫ</option>
+  <option>ЯСТРЕБЫ Academy</option>
+  <option>ЯСТРЕБЫ Mini</option>
+</select>
       <textarea placeholder="О себе"></textarea>
       <button type="submit" class="btn primary full">Отправить заявку</button>
     </form>
