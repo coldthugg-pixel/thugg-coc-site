@@ -101,7 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return; // 💥 теперь ошибок не будет
 
   const BOT_TOKEN = "8273970021:AAFV2Dz6xMCMcLDTb5m-ryjChhhY6qdoSsc";
-  const ADMIN_IDS = ["5607820177"];
+ const ADMIN_IDS = [
+  "5607820177",
+  "1069247330",
+  "111222333",
+  "444555666"
+];
 
   let applicationCount = parseInt(localStorage.getItem("applicationCount") || "0");
 
